@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee Management System</title>
+</head>
+<body>
+
+	<h2>Employee</h2>
+
+	<a href="/newemployee">Click here to add new Employee</a>
+
+	<table border=1>
+		<tr>
+			<th>ID</th>
+			<th>Employee Name</th>
+			<th>Employee Address</th>
+			<th>Employee Salary</th>
+			<th>Employee Department</th>
+			
+		
+		</tr>
+
+		<tr th:each="employee:${Employee}">
+			<td th:text="${employee.id}"></td>
+			<td th:text="${employee.name}"></td>
+			<td th:text="${employee.address}"></td>
+			<td th:text="${employee.salary}"></td>
+			<td th:text="${employee.department != null? employee.department.name:'No Department Assigned'}"></td>
+			
+			
+
+
+
+		</tr>
+
+	</table>
+
+</body>
+</html>

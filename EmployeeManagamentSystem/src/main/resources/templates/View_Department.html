@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Employee Management System</title>
+</head>
+<body>
+
+	<h2>Department</h2>
+
+	<a href="/newdept">Click here to add new Department</a>
+
+	<table border=2>
+		<tr>
+			<th>ID</th>
+			<th>Department Name</th>
+			<th>Head of Department</th>
+			<th>Update Department</th>
+			<th>Delete Department</th>
+		
+		</tr>
+
+		<tr th:each="department:${listdepartments}">
+			<td th:text="${department.id}"></td>
+			<td th:text="${department.name}"></td>
+			<td th:text="${department.hod}"></td>
+			<td> <a th:href="@{/updatedepartment/{id}(id=${department.id})}">Update</a></td>
+			<td> <a th:href="@{/deletedepartment/{id}(id=${department.id})}">Delete</a></td>
+			
+
+
+
+		</tr>
+
+	</table>
+
+</body>
+</html>
